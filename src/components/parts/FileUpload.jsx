@@ -1,37 +1,31 @@
-"use client"
+"use client";
 
-import React, {useState} from "react"
-
-import { Button } from "@/components/ui/button"
+import React, { useState } from "react";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { motion } from "framer-motion"; // Import motion from framer-motion
 
-export function UploadCard() {
-  const [file, setFile] = useState(null)
-  const [fileName, setFileName] = useState("")
+export function UploadCard({ setFile }) {
+  const [fileName, setFileName] = useState("");
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadStatus, setUploadStatus] = useState("");
 
+  // Handle file selection
   const handleFileChange = (event) => {
-    const selectedFile = event.target.files ? event.target.files[0] : null
+    const selectedFile = event.target.files ? event.target.files[0] : null;
     if (selectedFile) {
-      setFile(selectedFile)
-      setFileName(selectedFile.name)
+      setFile(selectedFile); // Update the file in the parent component
+      setFileName(selectedFile.name);
+      setUploadStatus(""); // Reset upload status
     }
-  }
+  };
 
   return (
     <Card className="w-full dark:border-2 dark:border-white border-black border-4">
@@ -50,15 +44,31 @@ export function UploadCard() {
                 accept=".wav,.mp3,.mp4"
               />
               {fileName && (
-                <p className="mt-2 text-sm text-gray-500">{fileName}</p>
+                <motion.p
+                  className="mt-2 text-sm text-gray-500"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  {fileName}
+                </motion.p>
               )}
             </div>
           </div>
         </form>
       </CardContent>
-      <CardFooter className="flex justify-center">
-        <Button className="w-full">{file===null ?'Upload' : 'Re Upload'}</Button>
+      <CardFooter>
+        {uploadStatus && (
+          <motion.p
+            className="mt-2 text-sm text-gray-500"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            {uploadStatus}
+          </motion.p>
+        )}
       </CardFooter>
     </Card>
-  )
+  );
 }

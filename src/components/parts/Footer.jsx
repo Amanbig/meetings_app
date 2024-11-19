@@ -6,7 +6,7 @@ import { FacebookIcon, GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-reac
 
 export default function Footer() {
   return (
-    <footer className=" py-10 border-t-4 bg-black text-white">
+    <footer className=" py-10 border-t-4 bg-black text-white border-t-2 dark:border-white border-black bg-gray-900">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-start px-4">
         <div className="mb-6">
           <h2 className="text-2xl font-bold mb-2">Meetings Summarizer</h2>
@@ -28,7 +28,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="text-center border-t border-gray-800 pt-6">
+      <div className="text-center border-t dark:border-white border-black pt-6">
         <p className="text-sm">&copy; {new Date().getFullYear()} Meetings Summarizer. All rights reserved.</p>
       </div>
     </footer>
