@@ -11,18 +11,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className="flex flex-col min-h-screen"> {/* Apply flex and min-height */}
         <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Menu/>
-          {children}
-          <div className="p-10"></div>
-          <Footer/>
-          </ThemeProvider>
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Menu />
+          <div className="flex-grow"> {/* This ensures the content grows and pushes the footer down */}
+            {children}
+          </div>
+          <Footer /> {/* The footer will be pushed to the bottom */}
+        </ThemeProvider>
       </body>
     </html>
   );
