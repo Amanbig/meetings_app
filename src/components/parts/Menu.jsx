@@ -37,7 +37,7 @@ const Menu = () => {
             <Button variant="link"><Link href="/">Overview</Link></Button>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Button variant="link"><Link href="/team">Team</Link></Button>
+            <Button variant="link"><Link href="/about">About Us</Link></Button>
           </NavigationMenuItem>
           <NavigationMenuItem>
             <ModeToggle/>
@@ -61,13 +61,7 @@ const Menu = () => {
                   <Button variant="link" onClick={toggleMobileMenu}><Link href="/">Overview</Link></Button>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Button variant="link" onClick={toggleMobileMenu}><Link href="/team">Team</Link></Button>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Button variant="link" onClick={toggleMobileMenu}><Link href="/institutes">Institutes</Link></Button>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Button variant="link" onClick={toggleMobileMenu}><Link href="/education">Education</Link></Button>
+                  <Button variant="link" onClick={toggleMobileMenu}><Link href="/about">About Us</Link></Button>
                 </NavigationMenuItem>
                 {/* <NavigationMenuItem>
                   <Switch onClick={() =>{
