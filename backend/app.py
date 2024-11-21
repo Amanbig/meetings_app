@@ -5,7 +5,7 @@ import os
 import tempfile
 import pyttsx3
 from pydub import AudioSegment
-from moviepy.editor import VideoFileClip
+from moviepy import VideoFileClip
 from groq import Groq
 from dotenv import load_dotenv
 

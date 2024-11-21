@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           <Menu />
-          <div className="flex-grow"> {/* This ensures the content grows and pushes the footer down */}
+          <div className="flex-grow pt-10"> {/* This ensures the content grows and pushes the footer down */}
             {children}
           </div>
           <Footer /> {/* The footer will be pushed to the bottom */}
