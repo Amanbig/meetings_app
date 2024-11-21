@@ -11,7 +11,7 @@
 !.yarn/versions
 
 venv/
-_pycache_/
+/_pycache_/
 
 # testing
 /coverage
@@ -19,6 +19,8 @@ _pycache_/
 # next.js
 /.next/
 /out/
+
+.*pyc
 
 # production
 /build

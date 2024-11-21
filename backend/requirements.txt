@@ -1,7 +1,7 @@
-fastapi
 pyttsx3
 pydub
 moviepy
 groq
 ffmpeg
 python_dotenv
+fastapi[standard]
