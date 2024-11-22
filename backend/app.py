@@ -8,6 +8,7 @@ from pydub import AudioSegment
 from moviepy import VideoFileClip
 from groq import Groq
 from dotenv import load_dotenv
+import uvicorn
 
 # Load environment variables from .env file
 load_dotenv()
@@ -79,6 +80,10 @@ def groq_question_answer(question, context):
         return response.choices[0].message.content.strip()
     except Exception as e:
         raise RuntimeError(f"Error in fetching answer: {str(e)}")
+    
+@app.get("/")
+async def root():
+    return {"message": "Hello from FastAPI!"}
 
 @app.post("/transcribe/")
 async def transcribe(file: UploadFile = File(...)):
@@ -131,3 +136,6 @@ async def ask_question(question: str = Form(...), context: str = Form(...)):
         return JSONResponse({"answer": answer})
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

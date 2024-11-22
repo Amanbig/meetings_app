@@ -1,2 +1,2 @@
-var endpoint = 'http://127.0.0.1:8000';
+var endpoint = 'https://meetings-5vwuq3fur-amanbigs-projects.vercel.app/';
 export default endpoint;
