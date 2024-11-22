@@ -1,5 +1,4 @@
 pyttsx3
-pydub
 moviepy
 groq
 ffmpeg
