@@ -1,2 +1,2 @@
-var endpoint = 'https://meetings-5vwuq3fur-amanbigs-projects.vercel.app/';
+var endpoint = 'https://meetings-summarizer-backend.onrender.com'|| 'http://127.0.0.1:8000';
 export default endpoint;
