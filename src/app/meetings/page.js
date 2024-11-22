@@ -14,6 +14,7 @@ import axios from "axios";
 import { UploadCard } from "@/components/parts/FileUpload";
 import { motion } from "framer-motion"; // Import Framer Motion
 import { ArrowRight, Loader } from "lucide-react";
+import endpoint from "../../../urls";
 
 export default function Page() {
   const [file, setFile] = useState(null);
@@ -36,7 +37,7 @@ export default function Page() {
     formData.append("file", file);
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/transcribe", formData, {
+      const response = await axios.post(`${endpoint}/transcribe`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setTranscription(response.data.transcription);
@@ -59,7 +60,7 @@ export default function Page() {
       const formData = new FormData();
       formData.append("transcription", transcription);
 
-      const response = await axios.post("http://127.0.0.1:8000/summarize", formData, {
+      const response = await axios.post(`${endpoint}/summarize`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setSummary(response.data.summary);
@@ -83,7 +84,7 @@ export default function Page() {
       formData.append("question", question);
       formData.append("context", summary);
 
-      const response = await axios.post("http://127.0.0.1:8000/question", formData, {
+      const response = await axios.post(`${endpoint}/question`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setAnswer(response.data.answer);
@@ -106,7 +107,7 @@ export default function Page() {
       const formData = new FormData();
       formData.append("summary", summary);
 
-      const response = await axios.post("http://127.0.0.1:8000/convert-audio/", formData, {
+      const response = await axios.post(`${endpoint}/convert-audio/`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
         responseType: "blob",
       });
