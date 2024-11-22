@@ -5,3 +5,4 @@ groq
 ffmpeg
 python_dotenv
 fastapi[standard]
+uvicorn
