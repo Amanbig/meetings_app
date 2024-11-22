@@ -64,6 +64,11 @@ This project is a Meetings Summarizer built with **FastAPI** on the backend and 
     ```
     GROQ_API_KEY=<your-groq-api-key>
     ```
+6. Set the backend api
+    Make changes in the urls.js file with your endpoint
+    ```javascript
+    var endpoint = 'your_endpoint_here';
+    ```
 
 6. Run the backend
     ```bash
