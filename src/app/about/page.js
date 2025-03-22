@@ -35,56 +35,7 @@ export default function AboutUs() {
           </p>
         </motion.section>
 
-        {/* Team Section */}
-        <motion.section
-          className="mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <h2 className="text-3xl font-semibold text-center mb-6">Our Team</h2>
-          <p className="text-lg leading-relaxed text-center max-w-3xl mx-auto mb-6">
-            We are a passionate group of developers, designers, and innovators
-            dedicated to delivering high-quality solutions tailored to your
-            needs. With a shared vision for excellence, we strive to create
-            tools that empower individuals and teams worldwide.
-          </p>
-          <div className="flex flex-wrap justify-center gap-6">
-            <div className="p-4 border border-gray-300 dark:border-gray-700 rounded-lg w-72 text-center">
-              <img
-                src="/team-member1.jpg"
-                alt="Team Member 1"
-                className="rounded-full w-20 h-20 mx-auto mb-4"
-              />
-              <h3 className="text-xl font-bold">John Doe</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Founder & CEO
-              </p>
-            </div>
-            <div className="p-4 border border-gray-300 dark:border-gray-700 rounded-lg w-72 text-center">
-              <img
-                src="/team-member2.jpg"
-                alt="Team Member 2"
-                className="rounded-full w-20 h-20 mx-auto mb-4"
-              />
-              <h3 className="text-xl font-bold">Jane Smith</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Product Manager
-              </p>
-            </div>
-            <div className="p-4 border border-gray-300 dark:border-gray-700 rounded-lg w-72 text-center">
-              <img
-                src="/team-member3.jpg"
-                alt="Team Member 3"
-                className="rounded-full w-20 h-20 mx-auto mb-4"
-              />
-              <h3 className="text-xl font-bold">Alice Johnson</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Lead Developer
-              </p>
-            </div>
-          </div>
-        </motion.section>
+        
 
         {/* Call to Action Section */}
         <motion.section
