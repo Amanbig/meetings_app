@@ -24,29 +24,7 @@ export default function Home() {
         {/* Questions Section */}
 
         {/* Testimonials Section */}
-        <motion.section
-          className="mt-16 p-6 w-full  rounded-md shadow-lg"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.5 }}
-        >
-          <h2 className="text-2xl font-semibold mb-6">What People Are Saying</h2>
-          <div className="flex flex-wrap justify-center gap-6">
-            {["John Doe", "Jane Smith", "Alex Brown"].map((name, index) => (
-              <Card key={index} className="w-64">
-                <CardHeader>
-                  <CardTitle>{name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p>
-                    "This platform has completely transformed the way I approach
-                    my projects. Highly recommend it!"
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </motion.section>
+        
 
         {/* Call to Action Section */}
         <motion.section
